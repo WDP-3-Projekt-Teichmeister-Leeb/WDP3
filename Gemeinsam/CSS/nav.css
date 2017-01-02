@@ -1,0 +1,85 @@
+nav,
+nav>ul,
+nav>ul>li,
+nav>ul>li>ul>li,
+a {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    font-family: helvetica;
+    font-size: 16px;
+}
+
+nav ul {
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    padding: .8rem 1rem;
+    display: block;
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+nav ul li:hover {
+    background: rgba(0, 0, 0, .25);
+}
+
+.arrow {
+    font-family: Helvetica;
+    float: right;
+}
+
+.arrow-down::after {
+    content: "\25bc";
+}
+
+.arrow-right::after {
+    content: "\25b6";
+}
+
+@media only screen and (max-width:480px) {
+    .has-children ul li a {
+        padding-left: 2rem;
+    }
+    .has-children ul {
+        display: none;
+        width: 100%;
+        position: relative;
+        text-align: left;
+    }
+    nav ul li:hover ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width:480px) {
+    nav ul {
+        width: 100%;
+        position: fixed;
+        flex-direction: row;
+    }
+    nav ul li {
+        position: relative;
+        flex: 1 0 auto;
+        text-align: left;
+    }
+    .has-children ul {
+        display: none;
+        width: 100%;
+        position: absolute;
+    }
+    nav ul li:hover ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
